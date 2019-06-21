@@ -175,7 +175,7 @@ type HostContextDev = {
 type HostContextProd = string;
 type HostContext = HostContextDev | HostContextProd;
 
-let eventsEnabled: ?boolean = null;
+//let eventsEnabled: ?boolean = null;
 let selectionInformation: ?mixed = null;
 
 type Batch = FiberRootBatch & {
@@ -558,16 +558,16 @@ const DOMRenderer = ReactFiberReconciler({
   },
 
   prepareForCommit(): void {
-    eventsEnabled = ReactBrowserEventEmitter.isEnabled();
+    //eventsEnabled = ReactBrowserEventEmitter.isEnabled();
     selectionInformation = ReactInputSelection.getSelectionInformation();
-    ReactBrowserEventEmitter.setEnabled(false);
+    //ReactBrowserEventEmitter.setEnabled(false);
   },
 
   resetAfterCommit(): void {
     ReactInputSelection.restoreSelection(selectionInformation);
     selectionInformation = null;
-    ReactBrowserEventEmitter.setEnabled(eventsEnabled);
-    eventsEnabled = null;
+    //ReactBrowserEventEmitter.setEnabled(eventsEnabled);
+    //eventsEnabled = null;
   },
 
   createInstance(

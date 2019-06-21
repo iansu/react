@@ -149,6 +149,7 @@ export function trapCapturedEvent(topLevelType, handlerBaseName, element) {
 }
 
 export function dispatchEvent(topLevelType, nativeEvent) {
+  //console.log(topLevelType, nativeEvent, _enabled);
   if (!_enabled) {
     return;
   }
